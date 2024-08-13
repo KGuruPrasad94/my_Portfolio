@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Section</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+
+  /* Home Section */
+.home-section {
+  height: 100vh;
+  background-color: #000; /* Dark background */
+  color: #fff; /* White text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content {
+  text-align: center;
+}
+
+.home-content h1 {
+  font-size: 3rem; /* Adjust the font size as needed */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.home-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.bitmoji {
+  width: 150px; /* Adjust the size of the bitmoji image */
+  margin-top: 20px;
+}
+
+/* About Section */
+
+  .about-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-section img {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 20px;
+  }
+  .about-section p {
+    color: #333;
+  }
+
+  .work-section {
+  padding: 50px 0;
+  }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Work Section */
+.work-section {
+  padding: 50px 0;
+}
+
+.work-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  background: #fff;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #343a40; /* Darker color for the timeline */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -9px;
+  background-color: #343a40; /* Darker color for the points */
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+  border: 3px solid #fff;
+}
+
+.timeline-item.right::after {
+  left: -9px;
+}
+
+.timeline-item-content {
+  padding: 20px 30px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item-content img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.skills-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.skills-tools span {
+  background-color: #6c757d; /* Neutral gray background color */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0%;
+  }
+
+  .timeline-item.right::after {
+    left: -9px;
+  }
+}
+
+/* Additional CSS for Projects Section */
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.technologies {
+  margin-bottom: 15px;
+}
+
+.technologies span {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+}
+
+.btn-primary, .btn-secondary {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Additional CSS for Skills Section */
+.skills-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.skills-section .card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.skills-section .card-img-top {
+  padding: 20px; /* Add padding around your images if needed */
+  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
+  height: 180px; /* Fixed height for consistency */
+  object-fit: contain; /* This will make sure the image is scaled properly within the container */
+}
+.skills-section .card-body {
+  padding: 15px;
+}
+.skills-section .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+.skills-section .btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+.skills-section .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Additional CSS for Contact Section */
+.contact-section {
+  padding: 50px 0;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px; /* Size of your icons */
+  margin-bottom: 10px;
+}
+/* Hover effect for icons */
+.social-icon:hover {
+  opacity: 0.7;
+}
+/* Style for links in the Contact section */
+.contact-section a {
+  color: #fff;
+  text-decoration: none; /* Removes underline from links */
+  display: inline-block; /* Allows for margin on the bottom */
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: #ddd; /* Color when hovering over the link */
+}
+
+/* CSS for Sticky Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+}
+
+/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+body { 
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style for navigation bar links */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter white when hovering over links */
+}
+
+/* Media query for responsive navbar collapsing */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Same as navbar color for seamless look */
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+
+  <!-- Home Section -->
+<section id="home" class="home-section">
+  <div class="container">
+    <div class="home-content text-center">
+      <h1>Hi, I am</h1>
+      <h1>Guru Prasad Kumar</h1>
+      <h3>Data Analyst</h3>
+      <img src="images/bitmoji.png" alt="Bitmoji" class="bitmoji">
+    </div>
+  </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="mt-5">
+        <div class="container text-center">
+            <h2>About</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <img src="images/about/1.jpg" class="img-fluid rounded-circle mb-3" alt="Personal Picture">
+                </div>
+                <div class="col-md-8">
+                    <p>I am an enthusiastic data analyst with 5 years of experience in driving data-driven decision-making and organizational success. My passion lies in unraveling intricate data complexities to reveal trends and opportunities, driving strategic choices that positively impact both the company and society.</p>
+                    <p>Proficient in advanced visualization tools like Tableau and Power BI, I excel at constructing intricate SQL queries and optimizing ETL jobs using Python, Pandas, and NumPy. In my current role at Capital One, I’ve successfully optimized funds availability models and developed anomaly detection POCs, projecting significant annual savings.</p>
+                    <p>With a Master’s in Business Analytics from the University of Texas at Dallas and a Bachelor’s in Mechanical Engineering from Anna University, I am committed to continuous learning and eager to connect with like-minded professionals for exciting opportunities and collaborations. Let’s make great things happen together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work-section">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+          <!-- Work Item 1 -->
+          <div class="timeline-item left">
+            <div class="timeline-item-content">
+              <img src="images/Work/1.png" alt="Capital One">
+              <h4>Senior Data Analyst - Fraud Operations</h4>
+              
+              <p><small>Feb 2023 - Present</small></p>
+              <p>Optimized funds availability model, reducing losses and improving customer experience. Developed anomaly detection POC for digital account openings, saving $3-4M annually.</p>
+              <div class="skills-tools">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Machine Learning</span>
+                <span>Fraud Detection</span>
+              </div>
+            </div>
+          </div>
+          <!-- Work Item 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-item-content">
+              <img src="images/Work/2.png" alt="Capital One">
+              <h4>Senior Data Analyst - Data Governance</h4>
+              
+              <p><small>Sep 2021 - Feb 2023</small></p>
+              <p>Built a scalable data management tool monitoring 15 KPIs, automated daily reports for 500+ users, and improved compliance violation reporting.</p>
+              <div class="skills-tools">
+                <span>Data Governance</span>
+                <span>Project Management</span>
+                <span>Compliance</span>
+                <span>Data Strategy</span>
+                <span>ETL</span>
+                <span>Tableau</span>
+              </div>
+            </div>
+          </div>
+          <!-- Work Item 3 -->
+          <div class="timeline-item left">
+            <div class="timeline-item-content">
+              <img src="images/Work/3.png" alt="Lincare Inc">
+              <h4>Data Analyst - Supply Chain and Procurement</h4>
+              
+              <p><small>July 2021 - Sep 2021</small></p>
+              <p>Analyzed data for 900+ locations to identify KPIs for performance mitigation, successfully saving $8.2M through outlier detection using SQL and MS-Access.</p>
+              <div class="skills-tools">
+                <span>Supply Chain Analysis</span>
+                <span>Procurement</span>
+                <span>Performance Mitigation</span>
+                <span>SQL</span>
+                <span>MS-Access</span>
+                <span>Excel</span>
+              </div>
+            </div>
+          </div>
+          <!-- Work Item 4 -->
+          <div class="timeline-item right">
+            <div class="timeline-item-content">
+              <img src="images/Work/4.png" alt="Cognizant">
+              <h4>Data Analyst</h4>
+  
+              <p><small>Dec 2016 - June 2019</small></p>
+              <p>Led a team of 4 to implement new product build requirements, resolved 150+ critical defects, and enhanced feature implementations with 100% acceptance rate.</p>
+              <div class="skills-tools">
+                <span>Product Build</span>
+                <span>Defect Resolution</span>
+                <span>Feature Implementation</span>
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Excel</span>
+                <span>Project Management</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light">
+    <div class="container">
+      <h2 class="text-center">Projects</h2>
+      <div class="row">
+        <!-- Project 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">YouTube Video Summarizer</h5>
+              <p class="card-text">The YouTube Video Summarizer App is a Streamlit-based application designed to convert YouTube video transcripts into concise summaries. Leveraging the power of the Google Gemini API, this app provides users with quick and informative summaries of video content, making it easier to extract key information from lengthy videos.</p>
+              <div class="technologies">
+                <span>Streamlit</span>
+                <span>Google Gemini API</span>
+                <span>Python</span>
+                <span>Machine Learning</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Youtube_Video_Summarizer" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Book Research Tool</h5>
+              <p class="card-text">This project is an advanced book research tool designed to enhance the accessibility and usability of academic texts. Utilizing state-of-the-art language models and a user-friendly interface, this tool allows users to query the book for specific information, facilitating efficient research and study.</p>
+              <div class="technologies">
+                <span>LangChain</span>
+                <span>Python</span>
+                <span>Natural Language Processing</span>
+                <span>Streamlit</span>
+                <span>HTML</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Book-Research-Tool/tree/main" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">Emotions Classifier</h5>
+              <p class="card-text">This project involved building an emotions classifier using two different machine learning models: LSTM (Long Short-Term Memory) and BERT (Bidirectional Encoder Representations from Transformers). The objective was to perform sentiment analysis and classify textual data into various emotional categories such as sadness, joy, love, anger, fear, and surprise.</p>
+              <div class="technologies">
+                <span>Python</span>
+                <span>Transformers</span>
+                <span>Pytorch</span>
+                <span>Tensor flow</span>
+                <span>Keras</span>
+                <span>Sentiment Analysis</span>
+                <span>Scikit learn</span>
+                <span>LSTM</span>
+                <span>BERT</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Sentiment-Analysis-NLP-LSTM-vs-BERT-" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Project 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/4.jpg" class="card-img-top" alt="Project 4">
+            <div class="card-body">
+              <h5 class="card-title">Predicting Term Deposit Subscription</h5>
+              <p class="card-text">Develop a predictive model to determine whether clients will subscribe to a term deposit based on various client attributes and past marketing campaign interactions. This project explored three different machine learning models: Random Forest, XGBoost, and LightGBM (LGB).</p>
+              <div class="technologies">
+                <span>Python</span>
+                <span>Random Forest</span>
+                <span>XGBoost</span>
+                <span>LGB</span>
+                <span>Seaborn</span>
+                <span>Matplotlib</span>
+                <span>NumPy</span>
+                <span>Pandas</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Predicting-Term-Deposit-Subscription-using-Random-Forest-XGB-LGB/tree/main" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/5.jpg" class="card-img-top" alt="Project 5">
+            <div class="card-body">
+              <h5 class="card-title">New York Airbnb Rentals – Short Term Profitability Analysis</h5>
+              <p class="card-text">To identify the best zip codes in New York City for investing in 2-bedroom properties for short-term rentals, based on profitability. The goal is to develop a scalable data product to assist in investment decisions.</p>
+              <div class="technologies">
+                <span>Time Series</span>
+                <span>Prophet</span>
+                <span>Python</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/New-York-Air-Bnb-Rentals---Short-Term-Profitability-Analysis-Using-Prophet-Time-Series-/tree/main" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/6.jpg" class="card-img-top" alt="Project 6">
+            <div class="card-body">
+              <h5 class="card-title">Last Mile Delivery Cost and Warehouse Optimization</h5>
+              <p class="card-text">In the Last Mile Delivery Cost and Warehouse Optimization project, I utilized advanced machine learning techniques to predict last mile delivery costs and provide data-driven suggestions to optimize warehouse operations.</p>
+              <div class="technologies">
+                <span>Python</span>
+                <span>Linear Regression</span>
+                <span>Geopy</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>Scikit-learn</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Predicting-last-mile-delivery-cost-and-warehouse-optimisation/tree/main" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Project 7 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/7.jpg" class="card-img-top" alt="Project 7">
+            <div class="card-body">
+              <h5 class="card-title">Superstore Sales Analysis Dashboard</h5>
+              <p class="card-text">The goal of the Superstore Sales Analysis project is to analyze sales and product details along with customer demographics and shipping information of customers globally. The analysis aims to identify ways to increase sales and profits by answering key questions based on the data from 2011 to 2015.</p>
+              <div class="technologies">
+                <span>Power BI</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Superstore-Sales-Analysis-Power-BI/blob/main/Superstore%20Analysis%20-%20Global.pdf" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 8 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/8.jpg" class="card-img-top" alt="Project 8">
+            <div class="card-body">
+              <h5 class="card-title">H1-B Applications Analysis Dashboard</h5>
+              <p class="card-text">The goal of the H1-B Applications Analysis project is to identify the most desirable employers for international students and non-immigrant workers seeking full-term employment in the USA. The analysis uses data from the past three years (2017 - 2019) to provide insights into the H1-B visa application trends.</p>
+              <div class="technologies">
+                <span>Power BI</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/H1-B-Applications-Dashboard---PowerBI/blob/main/H1B%20Dashboard.pdf" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 9 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/projects/9.jpg" class="card-img-top" alt="Project 9">
+            <div class="card-body">
+              <h5 class="card-title">Visualization of 2019-20 NBA Season - Oklahoma City Thunders</h5>
+              <p class="card-text">The project aims to visualize the performance of the Oklahoma City Thunders during the 2019-20 NBA season to gain an overview of the team’s and individual players’ performance.</p>
+              <div class="technologies">
+                <span>Python</span>
+                <span>Seaborn</span>
+                <span>Matplotlib</span>
+                <span>NumPy</span>
+                <span>Pandas</span>
+                <span>Tableau</span>
+              </div>
+              
+              <a href="https://github.com/KGuruPrasad94/Visualiastion-of-OKC-Thunders-NBA-2019-20-Season-using-matplotlib-seaborn/blob/master/OKC_Report.pdf" class="btn btn-primary">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Skills Section -->
+<section id="Certifications" class="skills-section bg-white" id="Certifications">
+  <div class="container">
+    <h2 class="text-center">Certifications</h2>
+    <div class="row">
+      <!-- Skill 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/1.png" class="card-img-top" alt="Python">
+          <div class="card-body">
+            <h5 class="card-title">LangChain Chat with Your Data</h5>
+            <p class="card-text">Completed a comprehensive course on creating a chatbot with LangChain to interface with private data and documents. The course covered document loading, splitting, vector stores, embedding, retrieval, question answering, and chat functionalities, providing a solid foundation in building advanced chatbots using LangChain</p>
+            <a href="#" class="btn btn-outline-primary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
+          <div class="card-body">
+            <h5 class="card-title">Finetuning Large Language Models</h5>
+            <p class="card-text">Completed a course on Finetuning Large Language Models, which covered the essentials of when to use finetuning versus prompting for LLMs. The course included selecting suitable open-source models, preparing data, and training and evaluating models for specific domains. This comprehensive training provided practical insights into instruction finetuning, data preparation, training processes, and evaluation methods to enhance model performance in specialized tasks.</p>
+            <a href="#" class="btn btn-outline-primary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/3.png" class="card-img-top" alt="SQL">
+          <div class="card-body">
+            <h5 class="card-title">Generative AI with Large Language Models using AWS</h5>
+            <p class="card-text">In this course, I gained a deep understanding of the generative AI lifecycle, including data gathering, model selection, training, and deployment. Hands-on lab exercises for each module solidified my practical skills, enabling me to apply state-of-the-art techniques to real-world projects, thereby enhancing my ability to leverage LLMs for innovative solutions in my work.</p>
+            <a href="#" class="btn btn-outline-primary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
+          <div class="card-body">
+            <h5 class="card-title">Agentic RAG using LlamaIndex</h5>
+            <p class="card-text">Completed a course on Building Agentic RAG (Retrieve and Generate) systems using LlamaIndex, which focused on developing autonomous agents capable of intelligently navigating and analyzing data. The course covered key topics such as building a router query engine, tool calling, creating an agent reasoning loop, and constructing a multi-document agent. Hands-on lab exercises provided practical experience, enhancing my skills in guiding agent reasoning and debugging, and enabling powerful document Q&A and summarization capabilities.</p>
+            <a href="#" class="btn btn-outline-primary">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>Interested in working together or having a chat? Feel free to contact me.</p>
+    <div class="row">
+      <div class="col-lg-6">
+        <p><i class="fas fa-envelope"></i> guruprasad1994@outlook.com</p>
+      </div>
+      <div class="col-lg-6">
+        <p><i class="fas fa-phone"></i> 2146802977</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.linkedin.com/in/guru-prasad-utd/" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+          LinkedIn
+        </a>
+      </div>
+     
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://github.com/KGuruPrasad94" target="_blank">
+          <img src="icons/github.png" alt="GitHub" class="social-icon">
+          GitHub
+        </a>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#work">Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Certifications">Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
